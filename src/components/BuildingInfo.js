@@ -1,5 +1,5 @@
-export function BuildingInfo ({ selectedbuilding }) {
-    return( selectedbuilding.map( (property) => 
+export function BuildingInfo ({ selectedBuilding }) {
+    return( selectedBuilding.map( (property) => 
       <div key={ property.building_id }> 
         <p>NOM: { property.name }</p>
         <p>ADRESSE: { property.streetnumber} , { property.street }</p>
