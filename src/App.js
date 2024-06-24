@@ -6,29 +6,29 @@ import { Select } from './components/Select';
 
 
 export default function App() {
-  const [allbuildings, setAllbuildings] = useState([]);
-  const [selectedbuilding, setSelectedbuilding] = useState([]);
+  const [allBuildings, setAllBuildings] = useState([]);
+  const [selectedBuilding, setselectedBuilding] = useState([]);
 
   useEffect(() => {
     fetchAllBuildings()
     .then((data) => {
-      setAllbuildings(data);
+      setAllBuildings(data);
       if (data.length > 0)
-        setSelectedbuilding([data[0]])
+        setselectedBuilding([data[0]])
     })
   }, []);
 
   function handleSelect(e) {
     fetchBuildingById(e.target.value)
-    .then((data) => {setSelectedbuilding(data);
+    .then((data) => {setselectedBuilding(data);
     })
   };
 
   return (
     <>
       <div>
-        <Select handleSelect={ handleSelect } allbuildings={ allbuildings }/> 
-        {selectedbuilding && <BuildingInfo selectedbuilding={ selectedbuilding }/>}
+        <Select idSelect='Building' nameSelect='Building 'handleSelect={ handleSelect } allBuildings={ allBuildings }/> 
+        {selectedBuilding && <BuildingInfo selectedBuilding={ selectedBuilding }/>}
       </div>
     </>
   );
