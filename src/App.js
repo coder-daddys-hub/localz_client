@@ -4,7 +4,6 @@ import { BuildingInfoPage } from './pages/BuildingInfoPage';
 import { useState } from 'react';
 import { fetchLoginAuthentication } from './services/loginService';
 
-//TODO I I NEED TO WORKK OUT WHY THE RESPONSE FROM THE API IS EMPTY, PROBLEM LIES ON CLIENT SIDE, POSTMAN WORKS, API CODE OKç
 export default function App() {
 const [isLoggedIn, setIsLoggedIn] = useState(false);
 const [username, setUsername] = useState('');
@@ -19,7 +18,7 @@ function handleLogin(e) {
     })
     .catch(error => console.error('Error fetching login credentials:', error));
 }
-console.log(isLoggedIn);
+
   return (
     <>
       <div>
