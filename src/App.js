@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { fetchLoginAuthentication } from './services/loginService';
 
 export default function App() {
-const [isLoggedIn, setIsLoggedIn] = useState(false);
+const [isLoggedIn, setIsLoggedIn] = useState(true);
 const [username, setUsername] = useState('');
 const [password, setPassword] = useState('');
 
