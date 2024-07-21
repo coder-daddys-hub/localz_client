@@ -1,9 +1,11 @@
-export function Select ({ idSelect, nameSelect, handleSelect, allBuildings }) {
+import './Select.css';
+
+export function Select ({ labelText, idSelect, nameSelect, handleSelect, selectOptions, optionKey, optionValue, optionText }) {
   return ( 
     <>
-      <p>Choisir l'édifice : </p>
-      <select className="select" id={idSelect} name={nameSelect} onChange={ handleSelect }>
-        { allBuildings.map((property) => <option key={ property.building_id } value={ property.building_id } > { property.name } </option>)};
+      <label htmlFor={idSelect}> {labelText}  </label>
+      <select type="text" className="select" id={idSelect} name={nameSelect} onChange={ handleSelect }>
+        { selectOptions.map((property) => <option key={ property[optionKey] } value={ property[optionValue] } > { property[optionText] } </option>)};
       </select>
       </>
     )
