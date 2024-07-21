@@ -24,7 +24,7 @@ export function BuildingInfoPage() {
     };
     return (
         <div>
-            <Select idSelect='Building' nameSelect='Building 'handleSelect={handleSelect} allBuildings={allBuildings}/> 
+            <Select labelText="BUILDING NAME" idSelect='Building' nameSelect='Building 'handleSelect={handleSelect} selectOptions={allBuildings} optionKey="building_id" optionValue="building_id" optionText="name"/> 
             {selectedBuilding && <BuildingInfo selectedBuilding={selectedBuilding}/>}
         </div>
     );
