@@ -9,10 +9,10 @@ export function BuildingInfo({ selectedBuilding }) {
     }
   }, [selectedBuilding]);
 
-  function handleChangeMeasure(e) {
-    if (e.target.value === "me.ca") {
+  function handleChangeMeasure(event) {
+    if (event.target.value === "me.ca") {
       setBuildingSurface((selectedBuilding[0].surface / 10.764).toFixed(2));
-    } else if (e.target.value === "pi.ca") {
+    } else if (event.target.value === "pi.ca") {
       setBuildingSurface(selectedBuilding[0].surface);
     }
   }

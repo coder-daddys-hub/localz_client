@@ -24,5 +24,7 @@
   color: white;
 }
 
-
+.selectedBuildingLocal {
+  background: rgb(209, 209, 235);
+}
 

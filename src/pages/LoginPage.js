@@ -1,7 +1,7 @@
 import { Input } from '../components/Input/Input';
 import { Button } from '../components/Button/Button';
 
-export function LoginPage({handleLogin,setPassword, setUsername}) {
+export function LoginPage({handleLogin, setPassword, setUsername}) {
 
     return (
         <form >
