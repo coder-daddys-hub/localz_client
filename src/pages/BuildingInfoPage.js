@@ -3,9 +3,8 @@ import { Select } from '../components/Select/Select';
 import { useState, useEffect } from 'react';
 import { fetchAllBuildings, fetchBuildingById } from '../services/buildingService';
 
-export function BuildingInfoPage() {
+export function BuildingInfoPage({selectedBuilding, setselectedBuilding}) {
     const [allBuildings, setAllBuildings] = useState([]);
-    const [selectedBuilding, setselectedBuilding] = useState([]);
   
     useEffect(() => {
       fetchAllBuildings()
@@ -16,15 +15,15 @@ export function BuildingInfoPage() {
       })
     }, []);
   
-    function handleSelect(e) {
-      fetchBuildingById(e.target.value)
+    function handleSelect(event) {
+      fetchBuildingById(event.target.value)
       .then((data) => {setselectedBuilding(data);
       })
-      
     };
+
     return (
         <div>
-            <Select labelText="BUILDING NAME" idSelect='Building' nameSelect='Building 'handleSelect={handleSelect} selectOptions={allBuildings} optionKey="building_id" optionValue="building_id" optionText="name"/> 
+            <Select labelText="BUILDING NAME" idSelect='Building' nameSelect='Building ' handleSelect={handleSelect} selectOptions={allBuildings} optionKey="building_id" optionValue="building_id" optionText="name"/> 
             {selectedBuilding && <BuildingInfo selectedBuilding={selectedBuilding}/>}
         </div>
     );
